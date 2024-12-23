@@ -3,9 +3,9 @@ import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 export function ScrollBasedVelocityDemo() {
   return (
     <VelocityScroll
-      text="✦ UI/UX Design ✦ Web Development ✦ Branding ✦ SEO "
-      default_velocity={2}
-      className="font-display text-center text-2xl font-bold tracking-[-0.02em] text-white drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
+      text="✦ Diseño Web ✦ Desarrollo Web ✦ Branding ✦ SEO ✦ Marketing Digital ✦ Diseño UI/UX"
+      default_velocity={1}
+      className="font-display text-center text-2xl font-bold tracking-[-0.02em] text-white drop-shadow-sm dark:text-white md:text-6xl md:leading-[5rem]"
     />
   );
 }

@@ -76,3 +76,14 @@
 .serviceshover:hover .servicesicon {
   transform: translateX(30px) rotate(45deg);
 }
+
+/* Animations */
+.services-cards:hover h4,
+.services-cards:hover p,
+.services-cards:hover .services-icon {
+  color: white;
+}
+
+.services-cards:hover img {
+  filter: invert(1);
+}
