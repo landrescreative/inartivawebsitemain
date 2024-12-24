@@ -4,22 +4,67 @@ import React from "react";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Memoized card component for better performance
+const ReasonCard: React.FC<{
+  title: string;
+  description: string;
+}> = React.memo(({ title, description }) => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9, filter: "blur(10px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: "blur(0px)",
+      transition: { duration: 0.6 },
+    },
+  };
+
+  return (
+    <motion.div
+      className="bg-colorPrimary p-6 rounded-lg shadow-lg md:pr-32 flex flex-col justify-between"
+      style={{
+        backgroundImage: "url(/ondas.png)",
+        backgroundSize: "cover",
+      }}
+      variants={cardVariants}
+      whileHover={{
+        scale: 1.1,
+        rotate: 1,
+        boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.3)",
+      }}
+      transition={{ duration: 0.3 }}
+    >
+      <h3 className="mb-2 font-black uppercase text-2xl text-white">{title}</h3>
+      <p className="text-white">{description}</p>
+      <motion.div
+        className="bg-white text-black p-2 w-fit mt-6"
+        whileHover={{ scale: 1.2, rotate: 15 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ duration: 0.2 }}
+      >
+        <MdKeyboardDoubleArrowRight size={30} />
+      </motion.div>
+    </motion.div>
+  );
+});
+
 const WhyToChooseUs: React.FC = () => {
   const reasons = [
     {
-      title: "Quality Service",
+      title: "Servicio de Calidad",
       description:
-        "We provide top-notch services that meet your needs and exceed your expectations.",
+        "Ofrecemos servicios de primera calidad que satisfacen tus necesidades y superan tus expectativas.",
     },
     {
-      title: "Expert Team",
+      title: "Equipo Experto",
       description:
-        "Our team consists of experienced professionals who are experts in their fields.",
+        "Nuestro equipo está compuesto por profesionales experimentados y expertos en sus áreas.",
     },
     {
-      title: "Customer Support",
+      title: "Soporte al Cliente",
       description:
-        "We offer 24/7 customer support to assist you with any queries or issues.",
+        "Brindamos soporte al cliente 24/7 para ayudarte con cualquier consulta o problema.",
     },
   ];
 
@@ -28,16 +73,6 @@ const WhyToChooseUs: React.FC = () => {
     visible: {
       opacity: 1,
       transition: { staggerChildren: 0.3 },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: { duration: 0.6 },
     },
   };
 
@@ -73,7 +108,7 @@ const WhyToChooseUs: React.FC = () => {
         className="text-4xl font-black text-center mb-4 uppercase"
         variants={titleVariants}
       >
-        Why To Choose Us
+        ¿Por Qué Elegirnos?
       </motion.h1>
       <motion.div
         className="w-16 h-1 bg-colorPrimary mx-auto mb-4"
@@ -83,39 +118,16 @@ const WhyToChooseUs: React.FC = () => {
         className="text-2xl text-center font-black mb-8 text-colorPrimary"
         variants={subtitleVariants}
       >
-        Here are some reasons why you should choose us
+        Estas son algunas razones para elegirnos
       </motion.h2>
       <AnimatePresence>
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reasons.map((reason, index) => (
-            <motion.div
+            <ReasonCard
               key={index}
-              className="bg-colorPrimary p-6 rounded-lg shadow-lg md:pr-32 flex flex-col justify-between"
-              style={{
-                backgroundImage: "url(/ondas.png)",
-                backgroundSize: "cover",
-              }}
-              variants={cardVariants}
-              whileHover={{
-                scale: 1.05,
-                translateY: -10,
-                boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
-              }}
-              transition={{ duration: 0.3 }}
-            >
-              <h3 className="mb-2 font-black uppercase text-2xl text-white">
-                {reason.title}
-              </h3>
-              <p className="text-white">{reason.description}</p>
-              <motion.div
-                className="bg-white text-black p-2 w-fit mt-6"
-                whileHover={{ scale: 1.2, rotate: 10 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ duration: 0.2 }}
-              >
-                <MdKeyboardDoubleArrowRight size={30} />
-              </motion.div>
-            </motion.div>
+              title={reason.title}
+              description={reason.description}
+            />
           ))}
         </motion.div>
       </AnimatePresence>

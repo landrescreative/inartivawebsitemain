@@ -38,7 +38,7 @@ const Services = () => {
   return (
     <section className="section-service bg-black py-20">
       {/* Fondo de la sección */}
-      <div className="bg-colorIvory w-10/12 mx-auto">
+      <div className="bg-colorIvory md:w-10/12 mx-auto">
         {/* Espacio de la sección */}
         <div className="section-space">
           {/* Contenedor de la sección */}
