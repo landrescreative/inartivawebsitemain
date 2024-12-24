@@ -38,7 +38,7 @@ export default function Testimonial() {
   }, []);
 
   // Actualizar la posición del degradado en función del mouse
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const x = (e.clientX / window.innerWidth) * 100;
     const y = (e.clientY / window.innerHeight) * 100;
     setGradientPosition({ x, y });

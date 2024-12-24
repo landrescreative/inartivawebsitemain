@@ -1,7 +1,6 @@
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import WordRotate from "@/components/magicui/word-rotate";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { AnimatedGridPatternDemo } from "./AnimatedGridPatternDemo";
 import SparklesText from "@/components/magicui/sparkles-text";
 import Link from "next/link";
 
