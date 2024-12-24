@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
           <ul className="text-gray-300 space-y-4">
             <li className="flex items-center gap-3">
               <FaPhoneAlt className="text-gray-400" />
-              <span className="notranslate">+52 55 1049 2408</span>
+              <span className="notranslate">+52 55 1049 2408 </span>
             </li>
             <li className="flex items-center gap-3">
               <FaEnvelope className="text-gray-400" /> {"contacto@inartiva.com"}
