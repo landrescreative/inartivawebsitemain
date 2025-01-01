@@ -10,7 +10,7 @@ const Services = () => {
       title: "Diseño Web - UI/UX",
       description:
         "Creamos interfaces intuitivas y experiencias optimizadas para aplicaciones móviles y sitios web, mejorando la interacción usuario-producto.",
-      link: "/detalles-servicio",
+      link: "/servicios",
     },
 
     {
@@ -18,21 +18,21 @@ const Services = () => {
       title: "Desarrollo Web",
       description:
         "Creamos sitios web, aplicaciones, tiendas en línea, y optimizamos su funcionalidad para garantizar una experiencia digital efectiva.",
-      link: "/detalles-servicio",
+      link: "/servicios",
     },
     {
       img: "/assets/img/icons/th-1-service-icon-4.svg",
       title: "Marketing Digital",
       description:
         "Gestionamos campañas en redes sociales, email marketing y estrategias para potenciar la presencia de tu marca en el entorno digital.",
-      link: "/detalles-servicio",
+      link: "/servicios",
     },
     {
       img: "/assets/img/icons/th-1-service-icon-2.svg",
       title: "SEO",
       description:
         "Optimizamos sitios web para mejorar su posicionamiento en motores de búsqueda, aumentando la visibilidad y atrayendo más clientes.",
-      link: "/detalles-servicio",
+      link: "/servicios",
     },
   ];
 

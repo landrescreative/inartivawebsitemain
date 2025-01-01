@@ -59,35 +59,69 @@ const CTA: React.FC = () => {
     <div className="relative bg-black text-white py-20">
       {/* Slider Infinito */}
       <div className="overflow-hidden relative z-10">
-        <motion.div
-          className="flex whitespace-nowrap text-8xl font-semibold uppercase items-center"
-          variants={marqueeVariants}
-          animate="animate"
-        >
-          {phrases.map((phrase, i) => (
-            <a
-              href="/contacto"
-              key={i}
-              className="flex items-center mx-12 space-x-6 shadow-lg hover:underline"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10 md:h-12 md:w-12"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+        <div className="flex whitespace-nowrap">
+          {/* Primera instancia del slider */}
+          <motion.div
+            className="flex whitespace-nowrap text-8xl font-semibold uppercase items-center"
+            variants={marqueeVariants}
+            animate="animate"
+          >
+            {phrases.map((phrase, i) => (
+              <a
+                href="/contacto"
+                key={i}
+                className="flex items-center mx-12 space-x-6 shadow-lg hover:underline"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-              <span>{phrase}</span>
-            </a>
-          ))}
-        </motion.div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-10 md:h-12 md:w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+                <span>{phrase}</span>
+              </a>
+            ))}
+          </motion.div>
+
+          {/* Segunda instancia del slider */}
+          <motion.div
+            className="flex whitespace-nowrap text-8xl font-semibold uppercase items-center"
+            variants={marqueeVariants}
+            animate="animate"
+          >
+            {phrases.map((phrase, i) => (
+              <a
+                href="/contacto"
+                key={i + phrases.length}
+                className="flex items-center mx-12 space-x-6 shadow-lg hover:underline"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-10 md:h-12 md:w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+                <span>{phrase}</span>
+              </a>
+            ))}
+          </motion.div>
+        </div>
       </div>
 
       {/* Información de Contacto */}

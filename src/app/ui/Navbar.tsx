@@ -3,12 +3,13 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import {
-  AiOutlineMenu,
-  AiOutlineClose,
-  AiOutlineArrowRight,
-} from "react-icons/ai";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
@@ -18,14 +19,17 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname(); // Obtener la ruta actual para el indicador
 
-  // Detectar scroll hacia arriba/abajo
+  // Detectar scroll hacia arriba/abajo para ocultar la barra
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setIsVisible(false); // Ocultar navbar al hacer scroll hacia abajo
-      } else {
-        setIsVisible(true); // Mostrar navbar al hacer scroll hacia arriba
+      if (!isMenuOpen) {
+        // Solo ocultar la barra si el menú no está abierto
+        if (currentScrollY > lastScrollY && currentScrollY > 50) {
+          setIsVisible(false); // Ocultar barra de navegación al hacer scroll hacia abajo
+        } else {
+          setIsVisible(true); // Mostrar barra de navegación al hacer scroll hacia arriba
+        }
       }
       setLastScrollY(currentScrollY);
     };
@@ -35,7 +39,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, [lastScrollY, isMenuOpen]);
 
   // Variantes para animaciones de Framer Motion
   const menuVariants = {
@@ -75,7 +79,7 @@ const Navbar = () => {
       </div>
 
       {/* Menú principal (visible solo en escritorio) */}
-      <ul className="hidden md:flex space-x-12 text-lg font-semibold tracking-wider mr-10">
+      <ul className="hidden md:flex space-x-12 text-lg font-semibold tracking-wider">
         {["/", "/servicios", "/nosotros", "/contacto"].map((path, index) => (
           <motion.li
             key={index}
@@ -93,6 +97,19 @@ const Navbar = () => {
           </motion.li>
         ))}
       </ul>
+
+      {/* Botón CTA (visible solo en escritorio) */}
+      <div className="hidden md:flex">
+        <Link href="/contacto">
+          <motion.button
+            className="btn mr-4"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            HABLEMOS
+          </motion.button>
+        </Link>
+      </div>
 
       {/* Menú hamburguesa (visible solo en móvil) */}
       <div className="md:hidden flex items-center mx-6">
@@ -145,7 +162,6 @@ const Navbar = () => {
                     className={`text-2xl font-semibold hover:text-gray-300 transition cursor-pointer flex items-center space-x-2 ${
                       pathname === path ? "border-l-4 border-blue-500 pl-4" : ""
                     }`}
-                    onClick={() => setIsMenuOpen(false)}
                   >
                     <Link href={path}>
                       {path === "/"
@@ -160,17 +176,17 @@ const Navbar = () => {
             {/* Información de contacto */}
             <div className="mt-12 text-lg space-y-4">
               <p className="flex items-center">
-                📧 <span className="ml-2">contacto@tuempresa.com</span>
+                📧 <span className="ml-2">contacto@inartiva.com</span>
               </p>
               <p className="flex items-center">
-                📞 <span className="ml-2">+34 123 456 789</span>
+                📞 <span className="ml-2">+52 55 2805 5529</span>
               </p>
             </div>
 
             {/* Redes sociales */}
             <div className="mt-12 flex space-x-6">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61571247848953"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xl hover:text-gray-400"
@@ -178,7 +194,7 @@ const Navbar = () => {
                 <FaFacebook />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/inartivastudio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xl hover:text-gray-400"
@@ -186,27 +202,19 @@ const Navbar = () => {
                 <FaInstagram />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://wa.me/525528055529"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xl hover:text-gray-400"
               >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xl hover:text-gray-400"
-              >
-                <FaTwitter />
+                <FaWhatsapp />
               </a>
             </div>
 
             {/* Pie del menú */}
             <div className="mt-auto pt-12 text-center w-full">
               <p className="text-sm text-gray-500">
-                © 2023 Tu Empresa. Todos los derechos reservados.
+                © 2024 INARTIVA. Todos los derechos reservados.
               </p>
             </div>
           </motion.div>

@@ -67,7 +67,7 @@ const HowWeCanHelp: React.FC = () => {
 
   return (
     <section className="relative py-28 md:px-12 bg-white">
-      <div className="md:w-10/12 mx-auto relative z-10">
+      <div className="container lg:w-10/12 mx-auto relative z-10">
         <h2 className="text-center text-5xl font-black uppercase text-gray-800 mb-6">
           ¿Cómo Podemos <span className="text-colorPrimary ">Ayudar</span> a Tu
           Negocio?
@@ -84,13 +84,13 @@ const HowWeCanHelp: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
             className={`flex flex-col ${
-              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
             } items-center mb-24`}
           >
             {/* Imagen */}
             <motion.div
               variants={imageVariants}
-              className="w-full md:w-1/2 h-[450px] relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-500"
+              className="w-full lg:w-1/2 h-[450px] relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-500"
             >
               <Image
                 src={service.icon}
@@ -104,7 +104,7 @@ const HowWeCanHelp: React.FC = () => {
             {/* Contenido */}
             <motion.div
               variants={textVariants}
-              className="w-full md:w-1/2 mt-10 md:mt-0 p-8 md:p-16"
+              className="w-full lg:w-1/2 mt-10 md:mt-0 p-8 md:p-16"
             >
               <h3 className="text-4xl font-semibold text-gray-800 mb-6">
                 {service.title}

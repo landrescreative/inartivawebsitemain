@@ -47,7 +47,7 @@ export default function Testimonial() {
   return (
     <div
       onMouseMove={handleMouseMove}
-      className="relative flex flex-col items-center justify-center  md:min-h-[60vh] overflow-hidden bg-black"
+      className="relative flex flex-col items-center justify-center  md:min-h-[60vh] overflow-hidden bg-black py-20 md:py-0"
     >
       {/* Fondo con degradado sutil y desenfoque */}
       <div
@@ -63,7 +63,7 @@ export default function Testimonial() {
       <div className="relative z-10 text-white px-4">
         {/* Encabezado */}
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-          Testimonios
+          Reseñas
         </h2>
 
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 relative">

@@ -73,7 +73,7 @@ export default function Example() {
             <button
               type="button"
               onClick={handleDismiss}
-              className="-m-3 p-3 focus-visible:outline-offset-[-4px]"
+              className=" p-3 focus-visible:outline-offset-[-4px]"
               aria-label="Cerrar"
             >
               <svg

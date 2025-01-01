@@ -5,6 +5,7 @@ import Navbar from "./ui/Navbar";
 import Footer from "./ui/Footer";
 import CTA from "./ui/CTA";
 import GeneriConBanner from "./ui/GeneriConBanner";
+import Preloader from "./ui/Preloader";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

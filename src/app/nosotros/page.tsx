@@ -2,6 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { FaPencilRuler, FaLaptopCode, FaChartLine } from "react-icons/fa";
+import Link from "next/link";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -26,11 +28,9 @@ const Nosotros = () => {
         >
           <h1 className="text-6xl md:text-[7rem] font-bold leading-tight tracking-tight">
             Diseñamos el futuro <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
-              digital
-            </span>
+            <span className=" text-colorPrimary">digital</span>
           </h1>
-          <p className="mt-6 text-lg md:text-2xl max-w-3xl text-center text-gray-400">
+          <p className="mt-6 text-lg md:text-2xl max-w-3xl text-center text-gray-300">
             En Inartiva, combinamos diseño, tecnología y experiencia para crear
             productos que conecten e inspiren.
           </p>
@@ -80,16 +80,25 @@ const Nosotros = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
             {[
               {
+                icon: (
+                  <FaPencilRuler size={40} className="mb-4 text-colorPrimary" />
+                ),
                 title: "Diseño Inmersivo",
                 description:
                   "Creamos experiencias visuales que conectan emocionalmente con los usuarios.",
               },
               {
+                icon: (
+                  <FaLaptopCode size={40} className="mb-4 text-colorPrimary" />
+                ),
                 title: "Tecnología Moderna",
                 description:
                   "Implementamos soluciones de última generación para garantizar calidad y escalabilidad.",
               },
               {
+                icon: (
+                  <FaChartLine size={40} className="mb-4 text-colorPrimary" />
+                ),
                 title: "Enfoque Estratégico",
                 description:
                   "Cada decisión que tomamos está fundamentada en análisis y objetivos claros.",
@@ -100,7 +109,7 @@ const Nosotros = () => {
                 variants={fadeInUp}
                 className="flex flex-col items-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-6"></div>
+                {feature.icon}
                 <h4 className="text-2xl font-semibold mb-4">{feature.title}</h4>
                 <p className="text-lg text-gray-400">{feature.description}</p>
               </motion.div>
@@ -216,9 +225,9 @@ const Nosotros = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full font-semibold shadow-lg hover:shadow-2xl transition"
+            className="btn"
           >
-            Contáctanos
+            <Link href="/contacto">Contáctanos</Link>
           </motion.button>
         </motion.div>
       </section>

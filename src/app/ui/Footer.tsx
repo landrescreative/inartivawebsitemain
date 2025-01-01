@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
     <footer className="bg-black text-white relative">
       {/* Contenido principal */}
       <motion.div
-        className="max-w-screen-xl mx-auto px-6 md:px-12 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+        className="max-w-screen-xl mx-auto px-6 md:px-12 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
