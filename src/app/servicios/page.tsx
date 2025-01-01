@@ -11,18 +11,12 @@ const Servicios = () => {
   const services = [
     {
       img: "/assets/img/icons/th-1-service-icon-1.svg",
-      title: "Diseño UI/UX - Diseño Web",
+      title: "Diseño Web - Diseño UI/UX ",
       description:
         "Creamos interfaces intuitivas y experiencias optimizadas para aplicaciones móviles y sitios web, mejorando la interacción usuario-producto.",
       link: "/detalles-servicio",
     },
-    {
-      img: "/assets/img/icons/th-1-service-icon-2.svg",
-      title: "SEO",
-      description:
-        "Optimizamos sitios web para mejorar su posicionamiento en motores de búsqueda, aumentando la visibilidad y atrayendo más clientes.",
-      link: "/detalles-servicio",
-    },
+
     {
       img: "/assets/img/icons/th-1-service-icon-3.svg",
       title: "Desarrollo Web",
@@ -35,6 +29,13 @@ const Servicios = () => {
       title: "Marketing Digital",
       description:
         "Gestionamos campañas en redes sociales, email marketing y estrategias para potenciar la presencia de tu marca en el entorno digital.",
+      link: "/detalles-servicio",
+    },
+    {
+      img: "/assets/img/icons/th-1-service-icon-2.svg",
+      title: "SEO",
+      description:
+        "Optimizamos sitios web para mejorar su posicionamiento en motores de búsqueda, aumentando la visibilidad y atrayendo más clientes.",
       link: "/detalles-servicio",
     },
   ];
@@ -77,7 +78,7 @@ const Servicios = () => {
   };
 
   return (
-    <div className="pt-28">
+    <div className="mt-10">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br bg-black text-white text-center py-36 ">
         <h1 className="text-4xl md:text-6xl max-w-3xl mx-auto font-bold mb-6">

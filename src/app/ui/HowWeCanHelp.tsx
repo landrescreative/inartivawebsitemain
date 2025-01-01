@@ -10,61 +10,37 @@ const brandSupportData = [
     title: "Tiendas en Línea",
     description:
       "Creamos tiendas en línea funcionales y personalizadas que conectan tu negocio con clientes globales, integrando pagos seguros y experiencias de usuario excepcionales.",
-    icon: "/online-store.jpg",
+    icon: "/tiendasenlinea01.jpg",
   },
   {
     title: "Presencia en Redes Sociales",
     description:
       "Establecemos y mejoramos tu presencia en redes sociales con diseños atractivos y estrategias efectivas para aumentar tu alcance.",
-    icon: "/social-media.jpg",
+    icon: "/socialmedia.png",
   },
   {
-    title: "Conexión con Clientes",
+    title: "Menú Digital para Restaurantes",
     description:
-      "Desarrollamos herramientas digitales para que te comuniques de manera eficiente con tus clientes, desde chats en vivo hasta sistemas de respuesta automatizados.",
-    icon: "/customer-connection.jpg",
+      "Digitalizamos tu menú para restaurantes con diseños atractivos y fáciles de usar, mejorando la experiencia de tus clientes y aumentando tus ventas.",
+    icon: "/menurestaurante01.jpg",
   },
   {
     title: "Soluciones para Negocios Locales",
     description:
       "Digitalizamos tu negocio local con estrategias adaptadas para aumentar tu visibilidad y atraer clientes cercanos.",
-    icon: "/local-business.jpg",
+    icon: "/negocioslocales01.jpg",
   },
   {
     title: "Portafolios y Presentaciones Digitales",
     description:
       "Creamos portafolios y presentaciones digitales profesionales que destacan tu trabajo y logros.",
-    icon: "/portfolio.jpg",
+    icon: "/portafolioweb01.jpg",
   },
   {
     title: "Posicionamiento en Línea",
     description:
       "Mejoramos tu visibilidad en buscadores con técnicas de SEO avanzadas, ayudando a que te encuentren más fácilmente.",
-    icon: "/seo.jpg",
-  },
-  {
-    title: "Branding y Diseño Visual",
-    description:
-      "Diseñamos identidades visuales que reflejan la esencia de tu marca, desde logos hasta paletas de colores únicas.",
-    icon: "/branding.jpg",
-  },
-  {
-    title: "Funcionalidades Interactivas",
-    description:
-      "Integramos funcionalidades interactivas como calculadoras, configuradores y más para enriquecer la experiencia del usuario.",
-    icon: "/interactive-features.jpg",
-  },
-  {
-    title: "Gestión de Inventarios para Negocios",
-    description:
-      "Desarrollamos sistemas personalizados para la gestión de inventarios, ayudándote a controlar existencias y pedidos.",
-    icon: "/inventory-management.jpg",
-  },
-  {
-    title: "Consultoría Digital",
-    description:
-      "Te asesoramos en la transformación digital de tu negocio, desde la planificación hasta la implementación.",
-    icon: "/digital-consulting.jpg",
+    icon: "/seo01.jpg",
   },
 ];
 
@@ -90,12 +66,8 @@ const HowWeCanHelp: React.FC = () => {
   };
 
   return (
-    <section className="relative py-28 px-6 md:px-12 bg-white">
-      {/* Formas geométricas */}
-      <div className="absolute top-10 left-10 w-32 h-32 bg-blue-100 rounded-full blur-xl opacity-30"></div>
-      <div className="absolute bottom-20 right-20 w-40 h-40 bg-purple-100 rounded-full blur-2xl opacity-40"></div>
-
-      <div className="max-w-screen-xl mx-auto relative z-10">
+    <section className="relative py-28 md:px-12 bg-white">
+      <div className="md:w-10/12 mx-auto relative z-10">
         <h2 className="text-center text-5xl font-black uppercase text-gray-800 mb-6">
           ¿Cómo Podemos <span className="text-colorPrimary ">Ayudar</span> a Tu
           Negocio?

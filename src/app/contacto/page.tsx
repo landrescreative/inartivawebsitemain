@@ -153,7 +153,7 @@ const Contacto = () => {
         <h2 className="text-gray-400 text-lg uppercase mb-6">Síguenos</h2>
         <div className="flex justify-center space-x-6">
           <motion.a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/inartivastudio"
             target="_blank"
             rel="noopener noreferrer"
             className="text-3xl hover:text-pink-500 transition-colors"
@@ -163,7 +163,7 @@ const Contacto = () => {
             <FaInstagram />
           </motion.a>
           <motion.a
-            href="https://www.whatsapp.com"
+            href="https://wa.me/525528055529"
             target="_blank"
             rel="noopener noreferrer"
             className="text-3xl hover:text-green-500 transition-colors"
@@ -173,7 +173,7 @@ const Contacto = () => {
             <FaWhatsapp />
           </motion.a>
           <motion.a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/profile.php?id=61571247848953"
             target="_blank"
             rel="noopener noreferrer"
             className="text-3xl hover:text-blue-500 transition-colors"

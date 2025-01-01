@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           <ul className="text-gray-300 space-y-4">
             <li className="flex items-center gap-3">
               <FaPhoneAlt className="text-gray-400" />
-              <span className="notranslate">+52 55 1049 2408 </span>
+              <span className="notranslate">+52 55 2805 5529 </span>
             </li>
             <li className="flex items-center gap-3">
               <FaEnvelope className="text-gray-400" /> {"contacto@inartiva.com"}
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
 
       {/* Derechos reservados */}
       <div className="py-6 text-center text-gray-400 text-sm">
-        © 2024 Tu Empresa. Todos los derechos reservados.
+        © 2024 INARTIVA. Todos los derechos reservados.
       </div>
     </footer>
   );

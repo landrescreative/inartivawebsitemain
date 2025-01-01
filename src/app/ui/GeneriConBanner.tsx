@@ -5,19 +5,21 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Example() {
-  const [isVisible, setIsVisible] = useState(false); // Inicialmente oculto
+  const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isDismissed, setIsDismissed] = useState(false);
 
   // Detectar scroll hacia abajo o arriba
   useEffect(() => {
     const handleScroll = () => {
+      if (isDismissed) return;
+
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY) {
-        // Scroll hacia abajo: mostrar banner
+      if (currentScrollY > lastScrollY && currentScrollY > 0) {
+        // Mostrar banner solo cuando hay desplazamiento hacia abajo y no estamos en el tope
         setIsVisible(true);
       } else {
-        // Scroll hacia arriba: ocultar banner
         setIsVisible(false);
       }
 
@@ -29,15 +31,16 @@ export default function Example() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, [lastScrollY, isDismissed]);
 
   const handleDismiss = () => {
-    setIsVisible(false); // Ocultar manualmente
+    setIsVisible(false);
+    setIsDismissed(true);
   };
 
   return (
     <AnimatePresence>
-      {isVisible && (
+      {isVisible && !isDismissed && (
         <motion.div
           className="fixed z-40 top-0 w-screen isolate flex items-center gap-x-6 overflow-hidden bg-colorPrimary px-6 py-2.5 sm:px-3.5 sm:before:flex-1"
           initial={{ opacity: 0, y: -50 }}
@@ -82,7 +85,7 @@ export default function Example() {
               >
                 <path
                   fillRule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                   clipRule="evenodd"
                 />
               </svg>

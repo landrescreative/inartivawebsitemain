@@ -13,7 +13,7 @@ const CTA: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("hello@bayoone.com");
+    navigator.clipboard.writeText("contacto@inartiva.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -122,13 +122,13 @@ const CTA: React.FC = () => {
           initial="hidden"
           animate="visible"
         >
-          +52 55 1049 2408
+          +52 55 2805 5529
         </motion.div>
 
         {/* Iconos de Redes Sociales */}
         <div className="flex justify-center space-x-8 mt-8">
           <motion.a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/inartivastudio"
             target="_blank"
             rel="noopener noreferrer"
             variants={tooltipVariants}
@@ -138,7 +138,7 @@ const CTA: React.FC = () => {
             <FaInstagram title="Instagram" />
           </motion.a>
           <motion.a
-            href="https://www.whatsapp.com"
+            href="https://wa.me/525528055529"
             target="_blank"
             rel="noopener noreferrer"
             variants={tooltipVariants}
@@ -148,7 +148,7 @@ const CTA: React.FC = () => {
             <FaWhatsapp title="WhatsApp" />
           </motion.a>
           <motion.a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/profile.php?id=61571247848953"
             target="_blank"
             rel="noopener noreferrer"
             variants={tooltipVariants}

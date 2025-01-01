@@ -7,18 +7,12 @@ const Services = () => {
   const services = [
     {
       img: "/assets/img/icons/th-1-service-icon-1.svg",
-      title: "Diseño UI/UX",
+      title: "Diseño Web - UI/UX",
       description:
         "Creamos interfaces intuitivas y experiencias optimizadas para aplicaciones móviles y sitios web, mejorando la interacción usuario-producto.",
       link: "/detalles-servicio",
     },
-    {
-      img: "/assets/img/icons/th-1-service-icon-2.svg",
-      title: "SEO",
-      description:
-        "Optimizamos sitios web para mejorar su posicionamiento en motores de búsqueda, aumentando la visibilidad y atrayendo más clientes.",
-      link: "/detalles-servicio",
-    },
+
     {
       img: "/assets/img/icons/th-1-service-icon-3.svg",
       title: "Desarrollo Web",
@@ -33,6 +27,13 @@ const Services = () => {
         "Gestionamos campañas en redes sociales, email marketing y estrategias para potenciar la presencia de tu marca en el entorno digital.",
       link: "/detalles-servicio",
     },
+    {
+      img: "/assets/img/icons/th-1-service-icon-2.svg",
+      title: "SEO",
+      description:
+        "Optimizamos sitios web para mejorar su posicionamiento en motores de búsqueda, aumentando la visibilidad y atrayendo más clientes.",
+      link: "/detalles-servicio",
+    },
   ];
 
   return (
@@ -44,9 +45,9 @@ const Services = () => {
           {/* Contenedor de la sección */}
           <div className="container flex flex-col justify-center items-center">
             {/* Bloque de la sección */}
-            <div className="flex justify-center gap-2 items-center px-5 py-2 mb-10 border-2 border-white rounded-full">
-              <GoArrowDownRight color="white" />
-              <h1 className="text-lg font-thin uppercase text-white">
+            <div className="flex justify-center gap-2 items-center px-5 py-2 mb-10 bg-white rounded-full">
+              <GoArrowDownRight color="black" size={24} />
+              <h1 className="text-lg font-normal uppercase text-black">
                 Nuestros Servicios
               </h1>
             </div>

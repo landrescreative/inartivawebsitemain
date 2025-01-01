@@ -22,7 +22,7 @@ const ReasonCard: React.FC<{
 
   return (
     <motion.div
-      className="bg-colorPrimary p-6 rounded-lg shadow-lg md:pr-32 flex flex-col justify-between"
+      className="bg-colorPrimary p-6 rounded-lg shadow-lg md:pr-32 flex flex-col justify-between  "
       style={{
         backgroundImage: "url(/ondas.png)",
         backgroundSize: "cover",
@@ -98,7 +98,7 @@ const WhyToChooseUs: React.FC = () => {
 
   return (
     <motion.div
-      className="container mx-auto p-6 py-20 md:w-10/12"
+      className="container mx-auto p-6 py-20 md:w-10/12 relative"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}

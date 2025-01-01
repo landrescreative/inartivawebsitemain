@@ -10,6 +10,7 @@ import {
 } from "react-icons/ai";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,15 +58,18 @@ const Navbar = () => {
       initial={{ y: 0 }}
       animate={{ y: isVisible ? 0 : "-100%" }}
       transition={{ duration: 0.3 }}
-      className="bg-white border-b border-black text-black flex items-center justify-between md:h-28 fixed top-0 left-0 w-full z-50"
+      className="bg-white border-b border-black text-black flex items-center justify-between md:h-20 fixed top-0 left-0 w-full z-50"
     >
       {/* Logo clicable con fondo azul */}
-      <div className="bg-blue-500 h-full w-16 md:w-28 flex items-center justify-center">
+      <div className="bg-blue-500 h-full w-16 md:w-20 flex items-center justify-center">
         <Link href="/">
-          <img
+          <Image
             src="/Logo-final.jpg"
             alt="Logo"
-            className="h-full object-cover w-full cursor-pointer"
+            width={512}
+            height={512}
+            objectFit="cover"
+            className="cursor-pointer"
           />
         </Link>
       </div>

@@ -2,167 +2,225 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { TextRevealDemo } from "../ui/TextRevealDemo";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 1 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
+};
 
 const Nosotros = () => {
-  // Variantes de animación para blobs
-  const blobVariants = {
-    animate: {
-      x: ["-30%", "30%", "-20%", "25%"], // Movimiento horizontal aleatorio
-      y: ["-20%", "20%", "-25%", "30%"], // Movimiento vertical aleatorio
-      transition: {
-        duration: 15, // Ciclo completo de animación
-        repeat: Infinity,
-        repeatType: "reverse" as const,
-        ease: "easeInOut",
-      },
-    },
-  };
-
   return (
-    <div className="text-black">
-      {/* Hero Section */}
-      <section
-        id="hero"
-        className="h-screen w-full bg-black text-white flex flex-col justify-center items-center relative overflow-hidden"
-      >
-        {/* Blobs */}
+    <div className="font-sans">
+      {/* Hero Section (Black Background) */}
+      <section className="bg-black text-white flex flex-col items-center justify-center min-h-screen text-center px-6">
         <motion.div
-          className="absolute w-96 h-96 bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500 rounded-full blur-3xl opacity-20"
-          variants={blobVariants}
-          animate="animate"
-        />
-        <motion.div
-          className="absolute w-72 h-72 bg-gradient-to-r from-blue-500 via-teal-500 to-green-500 rounded-full blur-3xl opacity-20"
-          variants={blobVariants}
-          animate="animate"
-        />
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-          }}
-          className="text-center px-8"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="flex justify-center items-center flex-col"
         >
-          <h1 className="text-6xl md:text-8xl font-bold mb-6">
-            HEY, SOMOS INARTIVA STUDIO
+          <h1 className="text-6xl md:text-[7rem] font-bold leading-tight tracking-tight">
+            Diseñamos el futuro <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+              digital
+            </span>
           </h1>
-          <p className="text-lg md:text-2xl max-w-3xl mx-auto">
-            Una agencia de diseño web. Encantado de conocerte.
+          <p className="mt-6 text-lg md:text-2xl max-w-3xl text-center text-gray-400">
+            En Inartiva, combinamos diseño, tecnología y experiencia para crear
+            productos que conecten e inspiren.
           </p>
         </motion.div>
       </section>
 
-      <section
-        id="mission"
-        className="h-screen w-full bg-white flex flex-col justify-center items-center text-center px-8 relative overflow-hidden"
-      >
-        {/* Blobs */}
+      {/* About Section (White Background) */}
+      <section className="py-24 px-6 bg-white text-black">
         <motion.div
-          className="absolute w-80 h-80 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-3xl opacity-20"
-          variants={blobVariants}
-          animate="animate"
-        />
-        <motion.div
-          className="absolute w-96 h-96 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-full blur-3xl opacity-20"
-          variants={blobVariants}
-          animate="animate"
-        />
-        <motion.div
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-          }}
+          className="container mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Nuestra Misión
-          </h2>
-          <p className="text-lg md:text-2xl max-w-4xl mx-auto leading-relaxed">
-            Empoderar a los negocios mediante soluciones digitales únicas y
-            funcionales, diseñadas para ofrecer experiencias impactantes y
-            conectar con los usuarios en un nivel más profundo.
-          </p>
-        </motion.div>
-      </section>
-      {/* Sobre Nosotros */}
-      <section
-        id="about"
-        className="h-screen md:w-10/12 mx-auto  flex flex-col md:flex-row items-center px-8 relative overflow-hidden justify-center"
-      >
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-          }}
-          className="md:w-1/2 text-center md:text-left"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Sobre Nosotros
-          </h2>
-          <p className="text-lg md:text-xl leading-relaxed">
-            Somos un grupo de profesionales con talento y experiencia que ofrece
-            soluciones creativas y funcionales a los negocios.
-          </p>
-          <p className="text-lg md:text-xl leading-relaxed mt-4">
-            Gracias a nuestra experiencia, somos capaces de pensar creativamente
-            y encontrar soluciones a los problemas, diseñando experiencias
-            memorables que conectan con los usuarios.
-          </p>
-        </motion.div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-          }}
-          className="md:w-1/2 flex justify-center items-center"
-        >
-          <img
-            src="/undraw_art-lover_orea.svg"
-            alt="Sobre Nosotros"
-            className="w-/12 h-auto rounded-lg"
-          />
+          <motion.h2
+            variants={fadeInUp}
+            className="text-4xl md:text-5xl font-bold mb-8"
+          >
+            La simplicidad es poderosa
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
+          >
+            Nuestra filosofía se basa en simplificar lo complejo. Diseñamos con
+            intención, eliminando lo innecesario y enfocándonos en lo esencial.
+          </motion.p>
         </motion.div>
       </section>
 
-      {/* Nuestra Misión */}
+      {/* Features Section (Black Background) */}
+      <section className="py-24 px-6 bg-black text-white">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="container mx-auto"
+        >
+          <motion.h3
+            variants={fadeInUp}
+            className="text-4xl md:text-5xl font-bold text-center mb-12"
+          >
+            Cómo lo hacemos
+          </motion.h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+            {[
+              {
+                title: "Diseño Inmersivo",
+                description:
+                  "Creamos experiencias visuales que conectan emocionalmente con los usuarios.",
+              },
+              {
+                title: "Tecnología Moderna",
+                description:
+                  "Implementamos soluciones de última generación para garantizar calidad y escalabilidad.",
+              },
+              {
+                title: "Enfoque Estratégico",
+                description:
+                  "Cada decisión que tomamos está fundamentada en análisis y objetivos claros.",
+              },
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="flex flex-col items-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-6"></div>
+                <h4 className="text-2xl font-semibold mb-4">{feature.title}</h4>
+                <p className="text-lg text-gray-400">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
 
-      {/* Newsletter Section */}
-      <section
-        id="newsletter"
-        className="w-full bg-gray-950 py-12 px-8 flex justify-center"
-      >
-        <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 w-full max-w-3xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            ¡Recibe correos electronicos con ofertas, paquetes y promociones!
-          </h2>
-          <p className="text-lg text-gray-600 mb-6">
-            ¡Únete a nuestra comunidad para recibir correos electrónicos!
+      {/* Video Showcase Section (White Background) */}
+      <section className="py-24 px-6 bg-white text-black">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="container mx-auto text-center"
+        >
+          <h3 className="text-4xl md:text-5xl font-bold mb-8">
+            Experimenta lo extraordinario
+          </h3>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+            Creamos soluciones digitales que no solo funcionan, sino que
+            inspiran. Descubre cómo hacemos magia.
           </p>
-          <form className="flex flex-col md:flex-row gap-4">
-            <input
-              type="email"
-              placeholder="Ingresa tu correo electrónico"
-              className="py-3 px-4 rounded-lg border border-gray-300 flex-1 text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="relative overflow-hidden rounded-lg shadow-lg"
+          >
+            <video
+              id="introVideo"
+              src="/IntroInartivaoptimizado.mp4"
+              autoPlay
+              loop
+              playsInline
+              muted
+              className="w-full h-full object-cover"
             />
             <button
-              type="submit"
-              className="py-3 px-6 bg-colorPrimary text-white rounded-lg hover:bg-blue-900 transition"
+              onClick={() => {
+                const video = document.getElementById(
+                  "introVideo"
+                ) as HTMLVideoElement;
+                if (video) {
+                  video.muted = !video.muted;
+                }
+              }}
+              className="absolute bottom-4 right-4 px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full font-semibold shadow-lg hover:shadow-2xl transition"
             >
-              Suscribirme
+              Toggle Audio
             </button>
-          </form>
-        </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Stats Section (Black Background) */}
+      <section className="py-24 px-6 bg-black text-white">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="container mx-auto text-center"
+        >
+          <motion.h3
+            variants={fadeInUp}
+            className="text-4xl md:text-5xl font-bold mb-12"
+          >
+            Nuestros números hablan
+          </motion.h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            {[
+              { number: "10+", label: "Años de experiencia" },
+              { number: "50+", label: "Proyectos completados" },
+              { number: "100%", label: "Clientes satisfechos" },
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="flex flex-col items-center"
+              >
+                <h4 className="text-6xl font-bold text-white mb-4">
+                  {stat.number}
+                </h4>
+                <p className="text-lg text-gray-400">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* CTA Section (White Background) */}
+      <section className="py-24 px-6 bg-white text-black">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <motion.h3
+            variants={fadeInUp}
+            className="text-4xl md:text-5xl font-bold mb-8"
+          >
+            El diseño correcto puede cambiar todo
+          </motion.h3>
+          <motion.p
+            variants={fadeInUp}
+            className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8"
+          >
+            ¿Listo para transformar tu marca? Vamos a trabajar juntos y a crear
+            algo extraordinario.
+          </motion.p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-10 py-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full font-semibold shadow-lg hover:shadow-2xl transition"
+          >
+            Contáctanos
+          </motion.button>
+        </motion.div>
       </section>
     </div>
   );
