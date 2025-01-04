@@ -38,6 +38,7 @@ export default function RootLayout({
         <Navbar />
         <GeneriConBanner />
         {children}
+        <Analytics></Analytics>
         <CTA />
         <Footer />
       </body>
