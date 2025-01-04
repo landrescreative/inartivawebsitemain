@@ -191,16 +191,6 @@ const CTA: React.FC = () => {
           >
             <FaFacebook title="Facebook" />
           </motion.a>
-          <motion.a
-            href="https://www.linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            variants={tooltipVariants}
-            whileHover="hover"
-            className="text-4xl hover:text-blue-700 transition-colors"
-          >
-            <FaLinkedin title="LinkedIn" />
-          </motion.a>
         </div>
       </div>
 

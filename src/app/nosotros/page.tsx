@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaPencilRuler, FaLaptopCode, FaChartLine } from "react-icons/fa";
 import Link from "next/link";
+import VideoSection from "../ui/VideoSection";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -119,7 +120,7 @@ const Nosotros = () => {
       </section>
 
       {/* Video Showcase Section (White Background) */}
-      <section className="py-24 px-6 bg-white text-black">
+      <section className="py-24 md:px-6 bg-white text-black">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -134,33 +135,7 @@ const Nosotros = () => {
             Creamos soluciones digitales que no solo funcionan, sino que
             inspiran. Descubre cómo hacemos magia.
           </p>
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="relative overflow-hidden rounded-lg shadow-lg"
-          >
-            <video
-              id="introVideo"
-              src="/IntroInartivaoptimizado.mp4"
-              autoPlay
-              loop
-              playsInline
-              muted
-              className="w-full h-full object-cover"
-            />
-            <button
-              onClick={() => {
-                const video = document.getElementById(
-                  "introVideo"
-                ) as HTMLVideoElement;
-                if (video) {
-                  video.muted = !video.muted;
-                }
-              }}
-              className="absolute bottom-4 right-4 px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full font-semibold shadow-lg hover:shadow-2xl transition"
-            >
-              Toggle Audio
-            </button>
-          </motion.div>
+          <VideoSection />
         </motion.div>
       </section>
 

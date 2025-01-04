@@ -5,7 +5,6 @@ import React from "react";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import Image from "next/image";
 import HowWeCanHelp from "../ui/HowWeCanHelp";
-import FreeConsultationBanner from "../ui/FreeConsultationBanner";
 
 const Servicios = () => {
   const services = [
@@ -58,7 +57,7 @@ const Servicios = () => {
     <div className="mt-10">
       {/* Hero Section */}
       <motion.section
-        className="relative bg-gradient-to-br bg-black text-white text-center py-36"
+        className="container relative bg-gradient-to-br bg-black text-white text-center py-36"
         initial="hidden"
         animate="visible"
         variants={{

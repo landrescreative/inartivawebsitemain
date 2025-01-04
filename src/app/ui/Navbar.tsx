@@ -8,8 +8,10 @@ import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
+  FaPhone,
   FaWhatsapp,
 } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
@@ -87,8 +89,8 @@ const Navbar = () => {
             initial="hidden"
             animate="visible"
             variants={navItemVariants}
-            className={`hover:text-blue-500 transition cursor-pointer ${
-              pathname === path ? "border-b-2 border-blue-500" : ""
+            className={`hover:text-colorPrimary transition cursor-pointer ${
+              pathname === path ? "border-b-2 border-colorPrimary" : ""
             }`}
           >
             <Link href={path}>
@@ -163,7 +165,7 @@ const Navbar = () => {
                       pathname === path ? "border-l-4 border-blue-500 pl-4" : ""
                     }`}
                   >
-                    <Link href={path}>
+                    <Link href={path} onClick={() => setIsMenuOpen(false)}>
                       {path === "/"
                         ? "INICIO"
                         : path.replace("/", "").toUpperCase()}
@@ -176,10 +178,11 @@ const Navbar = () => {
             {/* Información de contacto */}
             <div className="mt-12 text-lg space-y-4">
               <p className="flex items-center">
-                📧 <span className="ml-2">contacto@inartiva.com</span>
+                <IoMdMail></IoMdMail>{" "}
+                <span className="ml-2">contacto@inartiva.com</span>
               </p>
               <p className="flex items-center">
-                📞 <span className="ml-2">+52 55 2805 5529</span>
+                <FaPhone /> <span className="ml-2">+52 55 2805 5529</span>
               </p>
             </div>
 
@@ -214,7 +217,7 @@ const Navbar = () => {
             {/* Pie del menú */}
             <div className="mt-auto pt-12 text-center w-full">
               <p className="text-sm text-gray-500">
-                © 2024 INARTIVA. Todos los derechos reservados.
+                © 2025 INARTIVA. Todos los derechos reservados.
               </p>
             </div>
           </motion.div>

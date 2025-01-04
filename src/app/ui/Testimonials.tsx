@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Lista de testimonios reales
@@ -28,32 +28,55 @@ const testimonials = [
 export default function Testimonial() {
   const [current, setCurrent] = useState(0);
   const [gradientPosition, setGradientPosition] = useState({ x: 50, y: 50 });
+  const [isPaused, setIsPaused] = useState(false);
+  const timeoutRef = useRef(null);
 
   // Lógica del carrusel automático
   useEffect(() => {
+    if (isPaused) return;
+
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
     }, 5000); // Cambia cada 5 segundos
+
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   // Actualizar la posición del degradado en función del mouse
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e) => {
     const x = (e.clientX / window.innerWidth) * 100;
     const y = (e.clientY / window.innerHeight) * 100;
     setGradientPosition({ x, y });
   };
 
+  // Cambiar reseña al hacer drag y pausar auto-scroll temporalmente
+  const handleDragEnd = (event, info) => {
+    if (info.offset.x < -50) {
+      // Arrastre hacia la izquierda
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    } else if (info.offset.x > 50) {
+      // Arrastre hacia la derecha
+      setCurrent(
+        (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      );
+    }
+
+    // Pausar el auto-scroll y reiniciarlo después de 10 segundos
+    setIsPaused(true);
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setIsPaused(false), 10000);
+  };
+
   return (
     <div
       onMouseMove={handleMouseMove}
-      className="relative flex flex-col items-center justify-center  md:min-h-[60vh] overflow-hidden bg-black py-20 md:py-0"
+      className="relative flex flex-col items-center justify-center md:min-h-[60vh] overflow-hidden bg-black py-20 md:py-0"
     >
       {/* Fondo con degradado sutil y desenfoque */}
       <div
         className="absolute inset-0"
         style={{
-          background: `radial-gradient(circle at ${gradientPosition.x}% ${gradientPosition.y}%, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.15), rgba(0, 0, 0, 0.95))`,
+          background: `radial-gradient(circle at ${gradientPosition.x}% ${gradientPosition.y}%, rgba(109, 32, 218, 0.2), rgba(66, 51, 234, 0.082), rgba(0, 0, 0, 0.95))`,
           filter: "blur(30px)",
           transition: "background 0.1s ease",
         }}
@@ -86,6 +109,9 @@ export default function Testimonial() {
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5 }}
                 className="text-center md:text-left"
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                onDragEnd={handleDragEnd}
               >
                 {/* Testimonio */}
                 <p className="text-lg md:text-2xl leading-relaxed mb-8">
@@ -121,7 +147,7 @@ export default function Testimonial() {
               key={index}
               className={`w-3 h-3 md:w-4 md:h-4 rounded-full transition-transform ${
                 current === index
-                  ? "bg-blue-600 scale-125"
+                  ? "bg-colorPrimary scale-125"
                   : "bg-gray-500 scale-100"
               }`}
               onClick={() => setCurrent(index)}

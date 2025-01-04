@@ -68,7 +68,7 @@ const HowWeCanHelp: React.FC = () => {
   return (
     <section className="relative py-28 md:px-12 bg-white">
       <div className="container lg:w-10/12 mx-auto relative z-10">
-        <h2 className="text-center text-5xl font-black uppercase text-gray-800 mb-6">
+        <h2 className="text-center text-3xl md:text-5xl font-black uppercase text-black mb-6">
           ¿Cómo Podemos <span className="text-colorPrimary ">Ayudar</span> a Tu
           Negocio?
         </h2>
@@ -104,9 +104,9 @@ const HowWeCanHelp: React.FC = () => {
             {/* Contenido */}
             <motion.div
               variants={textVariants}
-              className="w-full lg:w-1/2 mt-10 md:mt-0 p-8 md:p-16"
+              className="w-full lg:w-1/2 mt-10 md:mt-0  md:p-16"
             >
-              <h3 className="text-4xl font-semibold text-gray-800 mb-6">
+              <h3 className="text-3xl font-semibold text-gray-800 mb-6">
                 {service.title}
               </h3>
               <motion.div

@@ -23,12 +23,12 @@ const VideoSection = () => {
   return (
     <div className="">
       {/* Video Section */}
-      <section className="pb-12 md:py-10 md:px-6 bg-white">
+      <section className="pb-12 md:py-10 px-2 md:px-6 bg-white">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="container mx-auto text-center"
+          className="md:container mx-auto text-center"
         >
           <div className="overflow-hidden rounded-lg shadow-lg relative">
             <motion.video

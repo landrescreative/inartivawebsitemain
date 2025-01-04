@@ -15,7 +15,7 @@ export default function Hero() {
           SOMOS INARTIVA
         </span>
       </AnimatedGradientText>
-      <div className="text-4xl lg:text-8xl w-11/12 lg:w-8/12 text-center font-bold uppercase">
+      <div className="text-5xl lg:text-8xl w-11/12 lg:w-8/12 text-center font-bold uppercase">
         <h1>CREAMOS</h1>
         <div className="bg-black rounded-full  ">
           <WordRotate
@@ -35,7 +35,7 @@ export default function Hero() {
         <h1 className="mt-2">CON ÚNICA</h1>
         <SparklesText
           text="CREATIVIDAD"
-          className="text-4xl lg:text-8xl text-colorPrimary"
+          className="text-5xl lg:text-8xl text-colorPrimary"
         />
       </div>
       <div className="text-center  uppercase flex flex-col md:flex-row gap-3 ">
