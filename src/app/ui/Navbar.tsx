@@ -81,7 +81,7 @@ const Navbar = () => {
       </div>
 
       {/* Menú principal (visible solo en escritorio) */}
-      <ul className="hidden md:flex space-x-12 text-lg font-semibold tracking-wider">
+      <ul className="hidden md:flex space-x-12 text-lg font-normal tracking-wider">
         {["/", "/servicios", "/nosotros", "/contacto"].map((path, index) => (
           <motion.li
             key={index}

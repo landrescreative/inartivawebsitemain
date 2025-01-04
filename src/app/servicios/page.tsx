@@ -57,7 +57,7 @@ const Servicios = () => {
     <div className="mt-10">
       {/* Hero Section */}
       <motion.section
-        className="container relative bg-gradient-to-br bg-black text-white text-center py-36"
+        className="px-4 relative bg-gradient-to-br bg-black text-white text-center py-36"
         initial="hidden"
         animate="visible"
         variants={{

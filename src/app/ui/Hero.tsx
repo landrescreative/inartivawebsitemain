@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className=" flex flex-col justify-center items-center w-full min-h-[75vh] gap-5 relative">
+    <div className=" flex flex-col justify-center items-center md:mt-10 w-full min-h-[75vh] gap-5 relative">
       <AnimatedGradientText>
         👋 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
         <span className="inline animate-gradient bg-gradient-to-r from-[#2518ff] via-[#9c40ff] to-[#2518ff ] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent">
