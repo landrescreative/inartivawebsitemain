@@ -63,7 +63,7 @@ const Nosotros = () => {
       </section>
 
       {/* Features Section (Black Background) */}
-      <section className="py-24 px-6 bg-black text-white">
+      <section className="py-24 px-6 bg-black text-white min-h-[600px] flex justify-center items-center">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -73,7 +73,7 @@ const Nosotros = () => {
         >
           <motion.h3
             variants={fadeInUp}
-            className="text-4xl md:text-5xl font-bold text-center mb-12"
+            className="text-4xl md:text-5xl font-bold text-center mb-20"
           >
             Cómo lo hacemos
           </motion.h3>
