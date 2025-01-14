@@ -1,5 +1,7 @@
-import { b } from "framer-motion/client";
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import { GoArrowDownRight } from "react-icons/go";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
@@ -12,7 +14,6 @@ const Services = () => {
         "Creamos interfaces intuitivas y experiencias optimizadas para aplicaciones móviles y sitios web, mejorando la interacción usuario-producto.",
       link: "/servicios",
     },
-
     {
       img: "/assets/img/icons/th-1-service-icon-3.svg",
       title: "Desarrollo Web",
@@ -56,10 +57,22 @@ const Services = () => {
             {/* Lista de Servicios */}
             <ul className="grid grid-cols-1 gap-[30px] lg:grid-cols-2">
               {services.map((service, index) => (
-                <li
+                <motion.li
                   key={index}
-                  className={`jos group/team-item`}
-                  data-jos_delay={index * 0.3}
+                  initial={{
+                    opacity: 0,
+                    x: index % 2 === 0 ? -100 : 100, // Animar desde izquierda o derecha
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    x: 0,
+                  }}
+                  viewport={{ once: true, amount: 0.2 }} // Animar cuando el 20% de la tarjeta sea visible
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeInOut",
+                  }}
+                  className="jos group/team-item"
                 >
                   <div className="services-cards group h-full">
                     <div
@@ -77,7 +90,7 @@ const Services = () => {
                         height="70"
                         className="h-[70px] w-auto"
                       />
-                      <h4 className="mb-[15px] mt-[30px] text-3xl font-bold ">
+                      <h4 className="mb-[15px] mt-[30px] text-3xl font-bold">
                         {service.title}
                       </h4>
                       <p className="mb-7">{service.description}</p>
@@ -92,7 +105,7 @@ const Services = () => {
                       </a>
                     </div>
                   </div>
-                </li>
+                </motion.li>
               ))}
             </ul>
             {/* Lista de Servicios */}
