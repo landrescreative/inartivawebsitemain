@@ -57,15 +57,21 @@ const Servicios = () => {
     <div className="mt-10">
       {/* Hero Section */}
       <motion.section
-        className="px-4 relative bg-gradient-to-br bg-black text-white text-center py-36"
+        className="px-4 relative text-white text-center py-36"
         initial="hidden"
         animate="visible"
         variants={{
           hidden: { opacity: 0, y: -30 },
           visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
         }}
+        style={{
+          backgroundImage: `url('/73b5b86b-d19d-4704-9ff0-653b4c29ff78.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
-        <h1 className="text-4xl md:text-6xl max-w-3xl mx-auto font-bold mb-6">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <h1 className="relative text-4xl md:text-6xl max-w-3xl mx-auto font-bold mb-6">
           EXPLORA NUESTRAS SOLUCIONES PARA TU NEGOCIO
         </h1>
       </motion.section>
